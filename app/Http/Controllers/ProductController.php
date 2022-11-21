@@ -38,7 +38,7 @@ class ProductController extends Controller
                 'numberProductPerPage' => $numberProductPerPage,
                 'count' =>$count,
                 'data' =>$data->getCollection(),
-                'paginate' =>$data->linkCollection(),
+                'paginate' =>(string) $data->links(),
                 ], 200);
     }
 

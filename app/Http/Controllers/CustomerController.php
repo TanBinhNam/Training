@@ -33,11 +33,13 @@ class CustomerController extends Controller
 
             $count = $query->get()->count();
             $data = $query->orderBy('created_at', 'desc')->paginate(self::NUMBER_CUSTOMER_PER_PAGE);
+  
             return response()->json([
                 'numberCustomerPerPage' => self::NUMBER_CUSTOMER_PER_PAGE,
                 'count' =>$count,
                 'data' =>$data->getCollection(),
-                'paginate' =>$data->linkCollection(),
+                'paginate' =>(string) $data->links(),
+                //'paginate' =>$data->linkCollection(),
                 ], 200);
     }
 

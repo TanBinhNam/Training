@@ -64,40 +64,12 @@ function loadProduct(page, product_name, status, price_from, price_to) {
                                   <td colspan="6" class="text-center">Không có dữ liệu</td>
                               </tr>`)
           }
-          var numberTotal = Object.keys(response.paginate).length - 2;
   
-          $.each(response.paginate, function(key, value) {
-            
-          var active;
-          if (value.active == true) {
-              active = 'active';
-              var offset = response.numberProductPerPage * (value.label -1 );
-              var from = offset + 1;
-              if(length === 0){
-                from = offset + 0;
-              }
-              $('.numberOfTotal').text(`Hiển thị từ ${from} ~ ${offset + length} trong tổng số ${response.count} sản phẩm`);
-          }
-          if(numberTotal > 1){
-            if (value.label === '&laquo; Previous') {
-              $(".pagination").append(
-              ` <li class="page-item ${active}" style="text-decoration:none"><a class='page-link' href="${value.url}" id="page" >&laquo;</a></li>`
-              );
-              return;
-          }
-          if (value.label === 'Next &raquo;') {
-            $(".pagination").append(
-              ` <li class="page-item ${active}" style="text-decoration:none"><a class='page-link' href="${value.url}" id="page" >&raquo;</a></li>`
-              );
-              return;
-          }
-              $(".pagination").append(
-              ` <li class="page-item ${active}" style="text-decoration:none"><a class='page-link' href="${value.url}" id="page" >${value.label}</a></li>`
-              );
-          
-          }
-          
-          });
+          $(".pagination").html(
+                   `${(response.paginate)}`
+          );    
+          var offset = response.numberProductPerPage * (currentPage -1 );
+          $('.numberOfTotal').text(`Hiển thị từ ${offset + 1} ~ ${offset + length} trong tổng số ${response.count} sản phẩm`);
           
       }
     });

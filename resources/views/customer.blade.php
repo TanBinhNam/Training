@@ -102,13 +102,11 @@
     </form>
 
     <div class='mt-3 row'>
-          <nav class="col-md-8">
-            <ul class="pagination justify-content-center" id="pagination">
-  
-            </ul>
-          </nav>
-          <p  style="float: right" class="numberOfTotal mr-0 col-md-4 text-right" ></p>
-    
+      <div class="col-md-9 pagination justify-content-center" id="pagination">
+      
+      </div>
+      <p  style="float: right" class="numberOfTotal mr-0 col-md-3 text-right" ></p>
+
     </div>
     
     <table class="table table-striped">
@@ -128,11 +126,9 @@
       </table>
 
       <div class='mt-3 row'>
-        <nav class="col-md-8">
-            <ul class="pagination justify-content-center">
-      
-            </ul>
-          </nav>
+        <div class="col-md-9 pagination justify-content-center">
+           
+          </div>
                   
     </div>
     {{-- <input type="hidden" class="pageOfPagination" value='1'> --}}

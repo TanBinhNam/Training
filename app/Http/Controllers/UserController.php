@@ -78,7 +78,7 @@ class UserController extends Controller
                 'numberUserPerPage' => $numberUserPerPage,
                 'count' =>$count,
                 'data' =>$data->getCollection(),
-                'paginate' =>$data->linkCollection(),
+                'paginate' =>(string) $data->links(),
                 ], 200);
     }
 

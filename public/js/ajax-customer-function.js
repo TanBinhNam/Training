@@ -40,34 +40,14 @@ function loadCustomer(page, name, email, status, address) {
                                   <td colspan="6" class="text-center">Không có dữ liệu</td>
                               </tr>`)
           }
-          var numberTotal = Object.keys(response.paginate).length - 2;
+
+          $(".pagination").html(
+                   `${(response.paginate)}`
+          );    
+          var offset = response.numberCustomerPerPage * (currentPage -1 );
+          $('.numberOfTotal').text(`Hiển thị từ ${offset + 1} ~ ${offset + length} trong tổng số ${response.count} khách hàng`);
   
-          $.each(response.paginate, function(key, value) {
-            
-          var active;
-          if (value.active == true) {
-              active = 'active';
-              var offset = response.numberCustomerPerPage * (value.label -1 );
-              $('.numberOfTotal').text(`Hiển thị từ ${offset + 1} ~ ${offset + length} trong tổng số ${response.count} khách hàng`);
-          }
-          if(numberTotal > 1){
-              if (value.label === '&laquo; Previous') {
-                $(".pagination").append(
-                  ` <li class="page-item ${active}" style="text-decoration:none"><a class='page-link' href="${value.url}" id="page" >&laquo;</a></li>`
-                );
-                return;
-          }
-              if (value.label === 'Next &raquo;') {
-                $(".pagination").append(
-                  ` <li class="page-item ${active}" style="text-decoration:none"><a class='page-link' href="${value.url}" id="page" >&raquo;</a></li>`
-                );
-                return;
-          }
-                $(".pagination").append(
-                 ` <li class="page-item ${active}" style="text-decoration:none"><a class='page-link' href="${value.url}" id="page" >${value.label}</a></li>`
-                );        
-          }         
-          });          
+     
       }
     });
   }
