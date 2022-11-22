@@ -24,7 +24,7 @@ class ImportRequest extends FormRequest
     public function rules()
     {   
         return [
-            'import_excel' => ['required', 'mimes:xlsx'],
+            'import_excel' => ['required', 'mimes:xlsx', 'file'],
 
         ];
     }
@@ -34,6 +34,7 @@ class ImportRequest extends FormRequest
         return [
             'import_excel.required' => 'Chọn file',
             'import_excel.mimes' => 'File không hợp lệ',
+            'import_excel.file' => 'Không hợp lệ',
         ];
     }
 }

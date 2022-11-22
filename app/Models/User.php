@@ -29,7 +29,7 @@ class User extends Authenticatable
     {
         return $query
         ->when(isset($filters['name']), function ($q) use ($filters){
-                return $q->where('customer_name', 'like', '%'.$filters['name'].'%');        
+                return $q->where('name', 'like', '%'.$filters['name'].'%');        
         })
         ->when(isset($filters['email']), function ($q) use ($filters){
             return $q->where('email', 'like', '%'.$filters['email'].'%'); 

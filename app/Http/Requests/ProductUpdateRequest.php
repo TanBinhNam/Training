@@ -29,7 +29,7 @@ class ProductUpdateRequest extends FormRequest
             'product_price' => ['required', 'min:0', 'max:99999', 'numeric'],
            
             'is_sales' => ['required', Rule::in(['0', '1', '2'])],
-            'product_image' => ['image', 'mimes:png, jpg, jpeg', 'max:2048', 'dimensions:max_width=1024,max__height=1024'],
+            'product_image' => ['image', 'file_extension:jpg,png,jpeg', 'mimes:jpg,png,jpeg', 'max:2048', 'dimensions:max_width=1024,max__height=1024'],
             
         ];
     }
@@ -52,6 +52,7 @@ class ProductUpdateRequest extends FormRequest
 
             'product_image.image' => 'Chỉ cho upload các file hình png, jpg, jpeg',
             'product_image.mimes' => 'Chỉ cho upload các file hình png, jpg, jpeg',
+            'product_image.file_extension' => 'Chỉ cho upload các file hình png, jpg, jpeg',
             'product_image.max' => 'Dung lượng hình không quá 2Mb',
             'product_image.dimensions' => 'Kích thước không quá 1024px',
         ];

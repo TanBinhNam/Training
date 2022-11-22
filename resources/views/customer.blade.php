@@ -225,12 +225,14 @@
         </div>
       </div>
       <input type="hidden" class="currentPage" value='1'>
+      <input type="hidden" id="MAX_FILE_SIZE" value="5242880" />
 @endsection
 
 @push('js')
 <script src="{{asset('js/ajax-customer-function.js')}}"></script>
 <script type="text/javascript">
 $(document).ready(function() {
+
   loadCustomer()
   $(document).on("click", ".pagination > li > a", function(event) {
                 event.preventDefault();
@@ -329,8 +331,16 @@ $(document).ready(function() {
               {
                 var formData = new FormData();           
                 formData.append("import_excel", $(this)[0].files[0]);  
-                formData.append("_token", $("input[name='_token']").val());  
-                importCustomer(formData);
+                formData.append("_token", $("input[name='_token']").val()); 
+               
+                if($(this)[0].files[0].size < $('#MAX_FILE_SIZE').val()){
+                  importCustomer(formData);
+                }else{
+                  hiddenAlert('error');
+                  hiddenAlert('success');
+                  showAlert('error', 'File có dung lượng quá lớn');
+                }
+              
               })
 
 })
