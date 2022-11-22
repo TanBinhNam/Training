@@ -52,12 +52,12 @@
     <form id="search" method="post">
       @csrf
         <div class="form-row">
-            <div class="col-md-2 mb-3 ml-2">
+            <div class="col-md-2 mb-3 ml-2 col-lg-2">
               <label for="product_name">Tên sản phẩm</label>
               <input type="text" class="form-control" name="product_name" id="product_name" placeholder="Nhập tên sản phẩm" value="{{old('product_name')}}">
             </div>
 
-            <div class="col-md-2 mb-3 ml-4">
+            <div class="col-md-2 mb-3 ml-3 col-lg-2">
               <label for="status">Trạng thái</label> 
               <select class="form-control" id="status" name="status">
                 <option selected hidden value=''> Chọn trạng thái</option>
@@ -70,20 +70,20 @@
               </select>
             </div>
 
-            <div class="col-md-6 mb-2 ml-6">
+            <div class="col-md-6 mb-2 ml-5 col-lg-6">
 
-            <div class="col-md-3 mb-2 input_price" style="float: left">
+            <div class="col-md-4 mb-2 input_price col-lg-3" style="float: left">
               <label for="price_from">Giá bán từ</label>
               <input type="text" class="form-control" size="4" name="price_from" id="price_from" value="{{old('price_from')}}">
             
              
             </div>
      
-            <div class="col-md-1 text-center" style="float: left;margin-top:32px;padding-left:15px">
+            <div class="col-md-2 text-center col-lg-1" style="float: left;margin-top:32px;padding-left:15px">
               ~ 
             </div>
 
-            <div class="col-md-3 mb-2 input_price" style="float: left">
+            <div class="col-md-4 mb-2 input_price col-lg-3" style="float: left">
               <label for="price_to">Giá bán đến</label>
               <input type="text" class="form-control" size="4" name="price_to" id="price_to" value="{{old('price_to')}}">
              
@@ -98,23 +98,23 @@
 
     <div class="form-row">
 
-        <div style="float: left" class="col-md-7 ml-2">
+        <div  class="col-md-6 ml-2 col-lg-7 float-left">
             <a class="btn btn-primary" href="{{route('products.add')}}" style="color:white"> <i class="fa fa-user-plus mr-2"></i>Thêm mới</a>
             
         </div>
 
  
-        <div class='col-md-4 text-right' style="float:right">
-            <button class="btn btn-primary ml-5 mr-5 btn-search" form="search"><i class="fa fa-search  mr-2"></i>Tìm kiếm</button>
-            <button class="btn btn-success ml-3 btn-reset-search"><i class="fa fa-times  mr-2"></i>Xóa tìm</button>
+        <div class='col-md-5 text-right col-lg-4'>
+            <button class="btn btn-primary ml-auto mr-5 btn-search" form="search"><i class="fa fa-search  mr-2"></i>Tìm kiếm</button>
+            <button class="btn btn-success ml-auto btn-reset-search"><i class="fa fa-times  mr-2"></i>Xóa tìm</button>
         </div>
     </div>
 
     <div class='mt-3 row'>
-      <div class="col-md-9 pagination justify-content-center" id="pagination">
+      <div class="col-md-6 pagination justify-content-center col-lg-9" id="pagination">
       
       </div>
-      <p  style="float: right" class="numberOfTotal mr-0 col-md-3 text-right" ></p>
+      <p   class="numberOfTotal col-md-6 text-right float-right col-lg-3" ></p>
 
     </div>
     

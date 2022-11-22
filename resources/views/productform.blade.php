@@ -51,10 +51,10 @@
             <form method="POST" enctype="multipart/form-data" class="form-horizontal" id="product_form">
               @csrf
               <input hidden name="product_id" id="product_id" value={{ $product_id ?? ''}}>
-                <div class='col-md-7' style="float:left">
+                <div class='col-md-6 col-lg-7' style="float:left">
                     <div class="form-group row">
-                        <label for="product_name" class="col-sm-2 col-form-label">Tên sản phẩm</label>
-                        <div class="col-sm-9">
+                        <label for="product_name" class="col-md-4 col-form-label col-lg-2">Tên sản phẩm</label>
+                        <div class="col-md-8 col-lg-9">
                           <input type="text" class="form-control" name="product_name" id="product_name" value="{{ $data->product_name ?? old('product_name')}}" 
                           placeholder="Nhập tên sản phẩm" required="">
               
@@ -69,8 +69,8 @@
                       </div>
     
                       <div class="form-group row">
-                        <label for="product_price" class="col-sm-2 col-form-label">Giá bán</label>
-                        <div class="col-sm-9">
+                        <label for="product_price" class="col-md-4 col-form-label  col-lg-2">Giá bán</label>
+                        <div class="col-md-8  col-lg-9">
                           <input type="number" class="form-control" min="0" name="product_price" id="product_price" value="{{ $data->product_price ?? old('product_price')}}" 
                           placeholder="Nhập giá bán" required="">
                       
@@ -84,8 +84,8 @@
                       </div>
 
                       <div class="form-group row">
-                        <label for="description" class="col-sm-2 col-form-label">Mô tả</label>
-                        <div class="col-sm-9">
+                        <label for="description" class="col-md-4 col-form-label col-lg-2">Mô tả</label>
+                        <div class="col-md-8 col-lg-9">
                           <textarea class="form-control pt-5" name="description" id="editor" 
                           placeholder="Mô tả sản phẩm" style="text-align:left;" rows="5" cols="50" >{{ $data->description ?? old('description')}}</textarea>
               
@@ -99,8 +99,8 @@
                       </div>
 
                       <div class="form-group row">
-                        <label for="status" class="col-sm-2 col-form-label">Trạng thái</label> 
-                        <div class="col-sm-9">
+                        <label for="status" class="col-sm-4 col-form-label col-lg-2">Trạng thái</label> 
+                        <div class="col-sm-8 col-lg-9">
                         <select class="form-control" id="is_sales" name="is_sales" required="">
                             <option selected hidden value='{{ $data->is_sales ?? old('is_sales')}}' >{{ product_status($data->is_sales ?? '') }} </option>            
                             <option value="0" {{($data->is_sales ?? old('is_sales')) === '0' ? 'selected' : ''}}>Dừng bán</option>
@@ -119,7 +119,7 @@
 
                 </div>
     
-                <div class='col-md-4 ml-5' style="float:left">
+                <div class='col-md-6 col-lg-5' style="float:left">
                   <div class="form-group row">
                     <div class="form-group">
                       <label for="product_image" >Hình ảnh</label>
@@ -127,7 +127,7 @@
                         <img class="ml-5" src="{{ asset($data->product_image ?? 'upload/product/default-thumbnail.jpg') }}" id="f"/>
                       </div>
                       </div>
-                      <div class="col-md-12 pl-0">
+                      <div class="col-md-12 pl-0  col-lg-12">
                           <a class='btn btn-primary btn-upload p-1'>Upload</a>
                           <a class='btn btn-danger btn-delete-file p-1 btn-file'>Xóa file</a>
                           <input type="text" id="file_name" placeholder="tên file upload" class="btn-file" readonly>
@@ -143,7 +143,7 @@
                     </div>
                 </div>
                 <input hidden type="text" id="scr-img" value="{{ $data->product_image ?? 'upload/product/default-thumbnail.jpg' }}">
-                <div class="col-md-10 mt-5 text-right" style="float:left">
+                <div class="col-md-12 mt-5 text-right col-lg-10" style="float:left">
                   <a href="{{route('products.index')}}" type="button" class="btn btn-secondary mb-2 mr-5 btn-lg btn-cancel">Hủy</a>
                   <button type="button" class="btn mb-2 ml-4 btn-lg btn-send-form" >Lưu</button>
                 </div>                

@@ -44,17 +44,17 @@
     <form id="search" method="post">
       @csrf
         <div class="form-row">
-            <div class="col-md-2 mb-3 ml-2">
+            <div class="col-md-2 mb-3 ml-2 col-lg-2">
               <label for="name">Tên</label>
               <input type="text" class="form-control" name="name" id="name" placeholder="Nhập họ tên" value="{{old('name')}}">
             </div>
 
-            <div class="col-md-2 mb-3 ml-6">
+            <div class="col-md-2 mb-3 ml-6 col-lg-2">
               <label for="email">Email</label>
               <input type="text" class="form-control" name="email" id="email" placeholder="Nhập email" value="{{old('email')}}">     
             </div>
 
-            <div class="col-md-2 mb-3 ml-6">
+            <div class="col-md-2 mb-3 ml-6 col-lg-2">
               <label for="status">Trạng thái</label> 
               <select class="custom-select" id="status" name="status">
                 <option selected hidden value=''> Chọn trạng thái</option>
@@ -63,7 +63,7 @@
               </select>
             </div>
 
-            <div class="col-md-2 mb-2 ml-6">
+            <div class="col-md-2 mb-2 ml-6 col-lg-2">
               <label for="name">Địa chỉ</label>
               <input type="text" class="form-control" name="address" id="address" placeholder="Nhập địa chỉ" value="{{old('name')}}">
             </div>
@@ -79,7 +79,7 @@
           <input id="import_excel" name="import_excel" type='file' style="display: none;"/>
           <input type="submit" hidden>
       </form>
-        <div style="float: left" class="col-md-7 ml-2">
+        <div class="col-md-7 ml-2 col-lg-7 float-left">
             <button class="btn btn-primary btn-open-add-modal" data-toggle="modal" data-target="#addmodal"><i class="fa fa-user-plus mr-2"></i>Thêm mới</button>
             <button class="btn btn-success ml-3 btn-import" for="#import_excel"><i class="fa fa-download mr-2"></i>Import CSV</button>
             
@@ -87,9 +87,9 @@
         </div>
 
  
-        <div class='col-md-4 text-right' style="float:right">
-            <button class="btn btn-primary ml-5 mr-5 btn-search" form="search"><i class="fa fa-search  mr-2"></i>Tìm kiếm</button>
-            <button class="btn btn-success ml-3 btn-reset-search"><i class="fa fa-times  mr-2"></i>Xóa tìm</button>
+        <div class='col-md-12 text-right col-lg-4'>
+            <button class="btn btn-primary ml-auto mr-5 btn-search" form="search"><i class="fa fa-search  mr-2"></i>Tìm kiếm</button>
+            <button class="btn btn-success ml-auto btn-reset-search"><i class="fa fa-times  mr-2"></i>Xóa tìm</button>
         </div>
     </div>
 
@@ -102,10 +102,10 @@
     </form>
 
     <div class='mt-3 row'>
-      <div class="col-md-9 pagination justify-content-center" id="pagination">
+      <div class="col-md-12 pagination justify-content-center col-lg-9" id="pagination">
       
       </div>
-      <p  style="float: right" class="numberOfTotal mr-0 col-md-3 text-right" ></p>
+      <p   class="numberOfTotal col-md-12 text-right col-lg-3" ></p>
 
     </div>
     
@@ -126,7 +126,7 @@
       </table>
 
       <div class='mt-3 row'>
-        <div class="col-md-9 pagination justify-content-center">
+        <div class="col-md-12 pagination justify-content-center col-lg-9  ">
            
           </div>
                   
