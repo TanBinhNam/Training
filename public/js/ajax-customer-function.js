@@ -45,7 +45,13 @@ function loadCustomer(page, name, email, status, address) {
                    `${(response.paginate)}`
           );    
           var offset = response.numberCustomerPerPage * (currentPage -1 );
-          $('.numberOfTotal').text(`Hiển thị từ ${offset + 1} ~ ${offset + length} trong tổng số ${response.count} khách hàng`);
+          var from = offset + 1;
+          var to = offset + length;
+          if(response.count === 0){
+            from = 0;
+            to = 0;
+          }
+          $('.numberOfTotal').text(`Hiển thị từ ${from} ~ ${to} trong tổng số ${response.count} khách hàng`);
   
      
       }

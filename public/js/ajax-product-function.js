@@ -69,7 +69,13 @@ function loadProduct(page, product_name, status, price_from, price_to) {
                    `${(response.paginate)}`
           );    
           var offset = response.numberProductPerPage * (currentPage -1 );
-          $('.numberOfTotal').text(`Hiển thị từ ${offset + 1} ~ ${offset + length} trong tổng số ${response.count} sản phẩm`);
+          var from = offset + 1;
+          var to = offset + length;
+          if(response.count === 0){
+            from = 0;
+            to = 0;
+          }
+          $('.numberOfTotal').text(`Hiển thị từ ${from} ~ ${to} trong tổng số ${response.count} sản phẩm`);
           
       }
     });
